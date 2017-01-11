@@ -20,7 +20,7 @@ python ez_setup.py
  
 @echo.===================================================================
 @echo.install pip
-call :download "https://github.com/yuanpli/setup_robot/raw/master/get-pip.py" "get-pip.py"
+call :download "https://bootstrap.pypa.io/get-pip.py" "get-pip.py"
 python get-pip.py
  
 @echo.===================================================================
@@ -34,8 +34,8 @@ pip install --upgrade robotframework
  
 @echo.===================================================================
 @echo.install robotframework-ride
-call :download "https://robotframework-ride.googlecode.com/files/robotframework-ride-1.2.3.win-amd64.exe" "robotframework-ride-1.2.3.win-amd64.exe"
-robotframework-ride-1.2.3.win-amd64.exe
+call :download "https://github.com/robotframework/RIDE/releases/download/v1.5.2.1/robotframework-ride-1.5.2.1.win-amd64.exe" "robotframework-ride-1.5.2.1.win-amd64.exe"
+robotframework-ride-1.5.2.1.win-amd64.exe
 pip install --upgrade robotframework-ride --allow-external robotframework-ride --allow-unverified robotframework-ride
  
  
@@ -87,16 +87,14 @@ pause
 @goto :EOF
  
  
- 
 :check_Permissions
-    echo Administrative permissions required. Detecting permissions...
- 
-    net session >nul 2>&1
-    if %errorLevel% == 0 (
-        echo Success: Administrative permissions confirmed.
-        @goto :EOF
-    ) else (
-        echo Failure: Current permissions inadequate.
-        pause >nul
-        exit
-    )
+echo Administrative permissions required. Detecting permissions...
+net session >nul 2>&1
+if %errorLevel% == 0 (
+	echo Success: Administrative permissions confirmed.
+	@goto :EOF
+) else (
+	echo Failure: Current permissions inadequate.
+	pause >nul
+	exit
+)
