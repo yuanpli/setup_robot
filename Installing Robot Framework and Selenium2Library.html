@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0105)https://dl.dropboxusercontent.com/u/40102182/Installing%20Robot%20Framework%20and%20Selenium2Library.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/">
+<title>Installing Robot Framework and Selenium2Library</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7514 2012-09-14 14:27:12Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css"></style></head>
+<body>
+<div class="document" id="installing-robot-framework-and-selenium2library">
+<h1 class="title">Installing Robot Framework and Selenium2Library</h1>
+
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#installing-python" id="id2">Installing Python</a></li>
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#installing-pip" id="id3">Installing <cite>pip</cite></a></li>
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#installing-robot-framework" id="id4">Installing Robot Framework</a></li>
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#installing-selenium2library" id="id5">Installing Selenium2Library</a></li>
+<li><a class="reference internal" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#troubleshooting-proxy-problems" id="id6">Troubleshooting proxy problems</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id1">Introduction</a></h1>
+<p>These instructions cover installing <a class="reference external" href="http://robotframework.org/">Robot Framework</a> and <a class="reference external" href="https://github.com/rtomac/robotframework-selenium2library/wiki">Selenium2Library</a>
+that are needed in hands-on exercises. If you already have preconditions <a class="reference external" href="http://python.org/">Python</a>,
+Firefox and <a class="reference external" href="http://pip-installer.py/">pip</a> installed, you only need to run the following commands.</p>
+<pre class="literal-block">pip install robotframework
+pip install robotframework-selenium2library
+</pre>
+</div>
+<div class="section" id="installing-python">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id2">Installing Python</a></h1>
+<p>Python 2.6.x or 2.7.x is required by Selenium2Library. These instructions cover
+installing Python on Windows. On other operating systems you most likely already
+have suitable Python interpreter installed. If not, consult the documentation of
+your operating system for instructions.</p>
+<ol class="arabic">
+<li><p class="first">Download either 32bit or 64bit installer, from <a class="reference external" href="http://python.org/download/">http://python.org/download/</a>.
+If you are unsure which one to use, select the 32bit version.</p>
+</li>
+<li><p class="first">Run the installer. Default values are OK for all question.</p>
+</li>
+<li><p class="first">Add Python installation directory and the directory where Python scripts are
+installed into <cite>PATH</cite>. Assuming you have installed Python to <cite>C:\Python27</cite>,
+you need to add the following to the end of <cite>PATH</cite> environment variable:</p>
+<pre class="literal-block">;C:\Python27;C:\Python27\Scripts
+</pre>
+<p>If you do not know how to modify <cite>PATH</cite>, see, for example,
+<a class="reference external" href="http://www.computerhope.com/issues/ch000549.htm">http://www.computerhope.com/issues/ch000549.htm</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-pip">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id3">Installing <cite>pip</cite></a></h1>
+<p><a class="reference external" href="http://pip-installer.py/">pip</a> is a tool for installing and managing Python packages. It makes
+installing, upgrading, and uninstalling Robot Framework and related Python
+based tools very convenient. <cite>pip</cite> is a replacement for <cite>easy_install</cite> which
+it also uses internally.</p>
+<ol class="arabic">
+<li><p class="first">Install <cite>easy_install</cite> by executing <cite>ez_setup.py</cite> file:</p>
+<pre class="literal-block">python ez_setup.py
+</pre>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p class="first">Install <cite>pip</cite> by executing <cite>get-pip.py</cite> file:
+<pre class="literal-block">python get-pip.py</pre>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-robot-framework">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id4">Installing Robot Framework</a></h1>
+<p>Once you have <cite>pip</cite> installed, installing Robot Framework is very simple:</p>
+<pre class="literal-block">pip install robotframework
+</pre>
+<p>To later upgrade the framework or to get a specific version:</p>
+<pre class="literal-block">pip install --upgrade robotframework
+pip install robotframework==2.7.6
+</pre>
+</div>
+<div class="section" id="installing-selenium2library">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id5">Installing Selenium2Library</a></h1>
+<p>Installing Selenium2Library is as easy as installing Robot Framework:</p>
+<pre class="literal-block">pip install robotframework-selenium2library
+</pre>
+<p>Selenium2Library installation automatically installs various dependencies,
+including <a class="reference external" href="http://code.google.com/p/selenium/">Selenium 2</a> tool it uses internally.</p>
+<p>The browser we use in exercises is <a class="reference external" href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, so you should also have that installed.</p>
+</div>
+<div class="section" id="troubleshooting-proxy-problems">
+<h1><a class="toc-backref" href="https://dl.dropboxusercontent.com/u/20347639/installation.html#id6">Troubleshooting proxy problems</a></h1>
+<p>If pip complains that "Cannot fetch index base URL <a class="reference external" href="http://pypi.python.org/simple/">http://pypi.python.org/simple/</a>" or other ways seems to have connection problems, you may need to add your proxy to your environment variables:</p>
+<pre class="literal-block">set HTTP_PROXY=10.144.1.10:8080
+</pre>
+<pre class="literal-block">set HTTPS_PROXY=10.144.1.10:8080
+</pre>
+<p>You will then also need this environment variable to prevent connection problems with Selenium2Library:</p>
+<blockquote>
+set NO_PROXY=127.0.0.1,localhost</blockquote>
+</div>
+</div>
+
+
+
+<iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Installing Robot Framework and Selenium2Library_files/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>
