@@ -12,15 +12,15 @@ RapidEE_setup.exe /SILENT
  
 @echo.===================================================================
 @echo.install setuptools
-call :download "https://github.com/yuanpli/setup_robot/blob/master/patch.py" "patch.py"
+call :download "https://github.com/yuanpli/setup_robot/raw/master/patch.py" "patch.py"
 call :create_patch
 python patch.py -d C:\Python27 python27_patch.diff
-call :download "https://github.com/yuanpli/setup_robot/blob/master/ez_setup.py" "ez_setup.py"
+call :download "https://github.com/yuanpli/setup_robot/raw/master/ez_setup.py" "ez_setup.py"
 python ez_setup.py
  
 @echo.===================================================================
 @echo.install pip
-call :download "https://github.com/yuanpli/setup_robot/blob/master/get-pip.py" "get-pip.py"
+call :download "https://github.com/yuanpli/setup_robot/raw/master/get-pip.py" "get-pip.py"
 python get-pip.py
  
 @echo.===================================================================
